@@ -14,7 +14,7 @@ import {
 } from "react-native";
 import axios from "axios";
 
-const Screen_01 = () => {
+const Screen_01 = ({ navigation }) => {
   const [category, setCategory] = useState([]);
   const [location, setLocation] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -24,7 +24,7 @@ const Screen_01 = () => {
 
   useEffect(() => {
     axios
-      .get("https://671ba9d92c842d92c380d3a1.mockapi.io/category")
+      .get("https://671dbeec09103098807dca29.mockapi.io/api/v1/category")
       .then((response) => {
         setCategory(response.data);
       });
@@ -104,6 +104,7 @@ const Screen_01 = () => {
                   styles.categoryItem,
                   { width: screenWidth / numColumns },
                 ]}
+                onPress={() => navigation.navigate("CategoryDetail", { item })}
               >
                 <View style={styles.categoryIconContainer}>
                   <Image
@@ -322,7 +323,7 @@ const styles = StyleSheet.create({
   },
   locationImageOfRec: {
     width: 195,
-    height195,
+    height: 195,
     borderRadius: 10,
     margin: 10,
   },
