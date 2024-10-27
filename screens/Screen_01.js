@@ -120,7 +120,11 @@ const Screen_01 = ({ navigation }) => {
 
           {/* Popular Destination */}
           <View style={styles.sectionContainer}>
-            <Text style={styles.sectionTitle}>Popular Destination</Text>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("PopularDestination")}
+            >
+              <Text style={styles.sectionTitle}>Popular Destination</Text>
+            </TouchableOpacity>
             <Image
               source={require("../assets/3gach.png")}
               style={styles.icon3gach}

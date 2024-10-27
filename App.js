@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Screen_01 from "./screens/Screen_01";
 import CategoryDetailScreen from "./screens/CategoryDetailScreen";
+import PopularDestinationScreen from "./screens/PopularDestinationScreen";
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,11 @@ const App = () => {
           name="CategoryDetail"
           component={CategoryDetailScreen}
           options={{ title: "Category Detail" }}
+        />
+        <Stack.Screen
+          name="PopularDestination"
+          component={PopularDestinationScreen}
+          options={{ title: "Popular Destination" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
