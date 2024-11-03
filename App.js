@@ -4,15 +4,16 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Screen_01 from "./screens/Screen_01";
 import CategoryDetailScreen from "./screens/CategoryDetailScreen";
 import PopularDestinationScreen from "./screens/PopularDestinationScreen";
-
+import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
-          name="Home"
+          name="Screen_01"
           component={Screen_01}
           options={{ headerShown: false }}
         />
@@ -26,6 +27,8 @@ const App = () => {
           component={PopularDestinationScreen}
           options={{ title: "Popular Destination" }}
         />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

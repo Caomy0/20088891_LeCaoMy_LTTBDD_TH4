@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   headerContainer: {
-    backgroundColor: "blue",
+    backgroundColor: "#6C63FF",
     height: 220,
   },
   header: {
